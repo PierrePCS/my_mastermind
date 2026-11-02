@@ -24,9 +24,9 @@ int count_misplaced(char *secret, char *guess)
     {
         if (secret_copy[i] == guess_copy[i])
         {
-            // TROU : Que met-on dans secret_copy[i] et dans guess_copy[i] pour les "rayer" ?
+         
         }
         i++;
     }
-    // (On fera l'étape B juste après !)
+    
 }
