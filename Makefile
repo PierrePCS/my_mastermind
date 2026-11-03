@@ -1,22 +1,19 @@
-TARGET = my_mastermind
-SRC = main.c game.c utils.c
-OBJ = $(SRC:.c=.o)
+NAME = my_mastermind
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+SRC = main.c game.c utils.c
+OBJ = $(SRC:.c=.o)
 
-all: $(TARGET)
+all: $(NAME)
 
-$(TARGET): $(OBJ)
-    $(CC) $(CFLAGS) -o $(TARGET) $(OBJ)
-
-%.o: %.c
-    $(CC) $(CFLAGS) -c $< -o $@
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
 clean:
-    rm -f $(OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
-    rm -f $(TARGET)
+	rm -f $(NAME)
 
 re: fclean all
 
