@@ -5,7 +5,6 @@
 ![Language C](https://img.shields.io/badge/Language-C-00599C?style=for-the-badge&logo=c&logoColor=white)
 ![Compiler](https://img.shields.io/badge/Compiler-GCC-4EAA25?style=for-the-badge&logo=gnu&logoColor=white)
 ![Build](https://img.shields.io/badge/Build-Makefile-F34F29?style=for-the-badge&logo=cmake&logoColor=white)
-![System Calls](https://img.shields.io/badge/I%2FO-read()_%2F_write()-blueviolet?style=for-the-badge)
 
 **Une implémentation complète en langage C du célèbre jeu de déduction Mastermind en ligne de commande.**  
 *Projet Algorithmique & Programmation Système — Colint School*
