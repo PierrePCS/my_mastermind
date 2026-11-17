@@ -14,6 +14,9 @@ int is_valid_code(char *str);
 int is_char_in_str(char *str, char c);
 void generate_random_code(char *secret_code);
 int read_input(char *buffer);
+int check_code_arg(int i, int argc, char **argv, char *secret_code);
+int is_valid_attempts(char *str);
+int check_attempts_arg(int i, int argc, char **argv, int *attempts);
 
 // Fonctions de game.c
 int count_well_placed(char *secret, char *guess);

@@ -28,7 +28,7 @@ int is_valid_code(char *str)
     int nombre = 0;
     while (str[nombre] != '\0')
     {
-       if(str[nombre] < '0' || str[nombre] > '8' ) {
+       if(str[nombre] < '0' || str[nombre] > '8' || is_char_in_str(&str[nombre + 1], str[nombre])) {
         return 0;
        }
         nombre++;
@@ -87,4 +87,40 @@ int read_input(char *buffer)
         }
         return 0;
     }
-   
+
+int check_code_arg(int i, int argc, char **argv, char *secret_code)
+{
+    if (i + 1 >= argc || !is_valid_code(argv[i + 1]))
+    {
+        printf("Error: -c must be followed by 4 digits from 0 to 8.\n");
+        return 0;
+    }
+    my_strcpy(secret_code, argv[i + 1]);
+    return 1;
+}
+
+int is_valid_attempts(char *str)
+{
+    int i = 0;
+
+    if (str[0] == '\0')
+        return 0;
+    while (str[i] != '\0')
+    {
+        if (str[i] < '0' || str[i] > '9')
+            return 0;
+        i++;
+    }
+    return atoi(str) > 0;
+}
+
+int check_attempts_arg(int i, int argc, char **argv, int *attempts)
+{
+    if (i + 1 >= argc || !is_valid_attempts(argv[i + 1]))
+    {
+        printf("Error: -t must be followed by a positive number.\n");
+        return 0;
+    }
+    *attempts = atoi(argv[i + 1]);
+    return 1;
+}

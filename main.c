@@ -11,17 +11,17 @@ int main(int argc, char **argv)
 
     while (i < argc)
     {
-        if (strcmp(argv[i], "-c") == 0 && i + 1 < argc)
+        if (strcmp(argv[i], "-c") == 0)
         {
-         
-            my_strcpy(secret_code, argv[i + 1]);
-                    code_set = 1;
+            if (!check_code_arg(i, argc, argv, secret_code))
+                return 1;
+            code_set = 1;
             i++;
         }
-        else if (strcmp(argv[i], "-t") == 0 && i + 1 < argc)
+        else if (strcmp(argv[i], "-t") == 0)
         {
-            
-            attempts = atoi(argv[i + 1]);
+            if (!check_attempts_arg(i, argc, argv, &attempts))
+                return 1;
             i++;
         }
         i++;
